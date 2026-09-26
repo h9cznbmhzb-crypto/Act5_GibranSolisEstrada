@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    background: radial-gradient(#000000, purple);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20%;
+}
+
+.main header {
+    background: radial-gradient(#B65F02, purple);
+    min-width: 90%;
+    margin: 0px 5%;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    align-items: center;
+    border-radius: 0px 0px 50px 50px;
+    z-index: 10;
+}
+
+.main header .navegacion ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
+.main header .logo {
+    max-width: 100px;
+    margin: 0;
+}
+
+.main header .navegacion li {
+    list-style: none;
+}
+
+.main header .navegacion li a {
+    color: #ffffff;
+    position: relative;
+    text-decoration: none;
+    margin-right: 40px;
+    transition: 1.0s;
+}
+
+.main header .navegacion li a:hover {
+    transform: translate(-15px, -10px);
+    letter-spacing: 2px;
+    color: grey;
+}
+
+.main .content {
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: 100px
+}
+
+.main .content:nth-of-type(n + 2) {
+    animation: aparecer 2s ease-out 0.5s forwards;
+    opacity: 0;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+.main .content .imagenLat {
+    position: relative;
+    display: inline-block;
+    flex: 1;
+    max-width: 40%;
+}
+
+.main .content .texto {
+    font-family: sans-serif;
+    font-size: 20px;
+    flex: 1;
+    max-width: 55%;
+    color: #ffffff;
+    height: auto;
+}
+
+.main .content .texto h2 {
+    font-size: 2.5em;
+    font-weight: 300;
+    line-height: 1.1em;
+    padding: 10px 0;
+}
+
+.main .content .texto h2 span {
+    font-weight: 900;
+}
+
+.main .content .texto ul li {
+    margin-left: 20px;
+    font-size: 1em;
+    margin: 20px 0px;
+}
+
+.btn {
+    background-color: #000000;
+    color: white;
+    border-radius: 40px;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    position: relative;
+    transition: 0.25s;
+}
+
+.btn:hover {
+    letter-spacing: 2px;
+    color: grey;
+}
+
+.mensaje {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 75%;
+    transform: translateX(-114%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+}
+
+#usopp:hover + .mensaje {
+    visibility: visible;
+    opacity: 1;
+}
+
+#usopp {
+    border-top-right-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#usopp:hover {
+    transform: translate(-15px, -10px);
+    letter-spacing: 2px;
+    color: grey;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    transition: 0.25s;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;                   /* Empieza siendo completamente invisible */
+        transform: translateX(100px);  /* Empieza 50px más abajo de su posición original */
+    }
+    100% {
+        opacity: 1;                   /* Termina siendo 100% visible */
+        transform: translateX(0);     /* Llega a su posición final */
+    }
+}
+
+@font-face 
+    font-family: NOMBRE_DE_TU_FUENTE
+    src: url('../libs/Fuentes/Roboto/Roboto-Bold.ttf')
